@@ -1,0 +1,12 @@
+URxvt*background: black
+URxvt*foreground: green
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*termName: rxvt
+URxvt*imLocale: en_US.utf8
+Xterm*background: black
+Xterm*foreground: green
+URxvt*tintColor: black
+URxvt*shading: 12
+URxvt*imLocale: en_US.utf8
+URxvt*transparent: true
