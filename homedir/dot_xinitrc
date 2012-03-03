@@ -1,0 +1,6 @@
+setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+/usr/bin/urxvtd -q -f -o
+eval `ssh-agent`
+/usr/bin/xmodmap $HOME/.Xmodmap
+/home/bkero/.mouse.sh
+/usr/bin/musca

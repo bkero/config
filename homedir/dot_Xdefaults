@@ -2,11 +2,28 @@ URxvt*background: black
 URxvt*foreground: green
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
-URxvt*termName: rxvt
-URxvt*imLocale: en_US.utf8
 Xterm*background: black
 Xterm*foreground: green
 URxvt*tintColor: black
 URxvt*shading: 12
 URxvt*imLocale: en_US.utf8
 URxvt*transparent: true
+URxvt*termName: screen-256color
+URxvt*fading: 50
+URxvt*fadeColor: white
+
+URxvt.perl-ext-common: default,clipboard-ctrl-v,selection-pastebin
+URxvt.keysym.C-period: perl:clipboard-ctrl-v:paste
+URxvt.keysym.M-1: command:\033]710;xft:Droid Sans Mono:size=10\007
+URxvt.keysym.M-2: command:\033]710;xft:Droid Sans Mono:size=12\007
+URxvt.keysym.M-3: command:\033]710;xft:Droid Sans Mono:size=15\007
+URxvt.keysym.M-4: command:\033]710;xft:Droid Sans Mono:size=18\007
+URxvt.keysym.M-5: command:\033]710;xft:Droid Sans Mono:size=26\007
+
+! Real transparency
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+
+! Fake transparency
+!URxvt.transparent: true
+!URxvt.shading: 10
