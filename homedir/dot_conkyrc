@@ -23,7 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-alignment bottom_left
+alignment top_left
 background no
 border_width 1
 cpu_avg_samples 2
@@ -39,7 +39,7 @@ use_xft yes
 xftfont DejaVu Sans Mono:size=12
 gap_x 5
 gap_y 5
-minimum_size 1429 5
+minimum_size 1355 5
 net_avg_samples 2
 no_buffers yes
 out_to_console no
