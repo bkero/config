@@ -1,4 +1,12 @@
 set tabstop=4
+set nospell
 set nohlsearch
 set expandtab
 set autoindent
+
+call pathogen#infect()
+
+syntax enable
+filetype plugin indent on
+
+map <Leader>= :Tabularize /=>/l1<Return>
