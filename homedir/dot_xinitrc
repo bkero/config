@@ -1,6 +1,6 @@
-setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+export force_s3tc_enable=true
+xsetbg -at 0,15 $HOME/.wallpaper
+xmodmap $HOME/.Xmodmap
 /usr/bin/urxvtd -q -f -o
-eval `ssh-agent`
-/usr/bin/xmodmap $HOME/.Xmodmap
-/home/bkero/.mouse.sh
-/usr/bin/musca
+/usr/bin/urxvtc -pe kuake
+/usr/bin/ssh-agent /home/bkero/code/herbstluftwm/herbstluftwm -c ~/.config/herbstluftwm/autostart

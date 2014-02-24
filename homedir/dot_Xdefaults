@@ -16,3 +16,5 @@ URxvt*font: xft:Terminus:pixelsize=15
 URxvt*urllauncher: firefox
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:     perl:font-size:decrease
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot

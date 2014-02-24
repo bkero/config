@@ -16,10 +16,16 @@ hc keyunbind --all
 
 # keybindings
 Mod=Mod4
+#Mod=Mod1
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn urxvtc
+hc keybind $Mod-grave spawn /home/bkero/code/herbstluftwm/scripts/q3terminal.sh
+hc keybind $Mod-Shift-Return spawn urxvtc -e mosh --ssh="ssh -o Port=2228" bkero@bke.ro
+
+# Set transparent background for wallpapers
+hc set frame_bg_transparent '1'
 
 # tags
 TAG_NAMES=( {1..9} )
@@ -79,17 +85,20 @@ hc keybind $Mod-Shift-j shift down
 hc keybind $Mod-Shift-k shift up
 hc keybind $Mod-Shift-l shift right
 
+hc keybind $Mod-~ /home/bkero/code/herbstluftwm/scripts/q3terminal.sh
+
 # colors
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
 hc set frame_bg_normal_color '#565656'
 hc set frame_bg_active_color '#345F0C'
-hc set frame_border_width 1
+hc set frame_border_width 0
 hc set window_border_width 2
 hc set window_border_normal_color '#454545'
 hc set window_border_active_color '#9fbc00'
 hc set always_show_frame 1
-hc set window_gap 4
+hc set window_gap 0
+hc set frame_gap 0
 
 # rules
 hc unrule -F
@@ -110,12 +119,17 @@ hc unlock
 # hc add_monitor 1280x1024+1280+0
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    $panel $monitor &
-done
+#panel=~/.config/herbstluftwm/panel.sh
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    $panel $monitor &
+#done
 
-hc pad 0 0 0 30
+hc pad 0 30 0 0
 hc rule class~"Conky" manage=off
+
+conky &
+sleep 2
+stalonetray &
+nm-applet &
