@@ -1,0 +1,5 @@
+alias irc='mosh shell.bke.ro -- screen -DRU irc'
+alias hc='/home/bkero/code/herbstluftwm/herbstclient'
+alias grpe='grep'
+alias ifwatch='watch -n1 "ifconfig wlan0; iwconfig wlan0; sudo wpa_cli status"'
+alias vnc-mirror="/usr/bin/x11vnc -ncache 10 -shared -forever -viewonly -display :0"
