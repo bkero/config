@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh boris.mozilla.com -A -t ssh bkero@puppet1.private.scl3.mozilla.com -t sudo /etc/puppet/bin/update-puppet
