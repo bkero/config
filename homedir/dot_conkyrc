@@ -15,7 +15,7 @@ conky.config = {
         gap_x = 5,
         gap_y = 5,
         minimum_height = 5,
-        minimum_width = 1355,
+        minimum_width = 1909,
         net_avg_samples = 2,
         no_buffers = true,
         out_to_console = false,
@@ -33,5 +33,4 @@ conky.config = {
         show_graph_range = false,
 }
 
-conky.text = [[${color grey}RAM: $color0 ${membar 4,50} ${color grey}CPU: $color0$cpu% ${cpubar 4,50} ${loadavg 1} $processes ${color red}$running_processes ${color grey}Bat: $color${battery} ${battery_bar 4,50} ${color gray}wlp3s0: $color0${wireless_essid wlp3s0} ${wireless_link_qual_perc wlp3s0}% ${addr wlp3s0}${color gray} ${color orange}$time
-]]
+conky.text = [[${color grey}RAM: $color0 ${membar 4,50} ${color grey}CPU: $color0$cpu% ${cpubar 4,50} ${loadavg 1} $processes ${color red}$running_processes ${color grey}Bat: $color${battery_percent BAT1}% ${battery_bar 4,50 BAT1} ${color gray}wlp2s0: $color0${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}% ${addr wlp2s0}${color gray}                     ${color orange}$time    ${color lightblue}${tztime America/New_York %H:%M} EST    ${color red}${tztime Europe/Berlin %H:%M} CEST]]

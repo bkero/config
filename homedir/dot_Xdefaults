@@ -1,20 +1,21 @@
+Xterm*background: black
+Xterm*foreground: green
+URxvt*cursorBlink: false
 URxvt*background: black
 URxvt*foreground: green
 URxvt*scrollBar: false
-URxvt*cursorBlink: true
-URxvt*termName: rxvt
+URxvt*termName: rxvt-unicode-256color
+!URxvt*termName: screen-256color
 URxvt*imLocale: en_US.utf8
-Xterm*background: black
-Xterm*foreground: green
 URxvt*tintColor: black
 URxvt*shading: 12
-URxvt*imLocale: en_US.utf8
 URxvt*transparent: true
-URxvt*perl-ext: clipboard,font-size
+URxvt*perl-ext: font-size,selection-to-clipboard,matcher
 !URxvt*font: xft:Droid Sans Mono:pixelsize=15
-URxvt*font: xft:Terminus:pixelsize=15
+URxvt*font: xft:xos4 Terminus:pixelsize=24
 URxvt*urllauncher: firefox
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:     perl:font-size:decrease
 URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
+URxvt.visualBell: true

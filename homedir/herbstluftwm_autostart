@@ -21,7 +21,7 @@ Mod=Mod4
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
-herbstclient keybind $Mod-Return spawn urxvt
+herbstclient keybind $Mod-Return spawn urxvt256c-ml
 herbstclient keybind $Mod-Shift-grave spawn urxvt
 herbstclient keybind $Mod-grave spawn /home/bkero/code/herbstluftwm/scripts/q3terminal.sh
 herbstclient keybind $Mod-Shift-Return spawn urxvtc -e mosh --ssh="ssh -o Port=2228" bkero@bke.ro
@@ -137,4 +137,8 @@ conky &
 sleep 2
 stalonetray &
 nm-applet &
+(source $HOME/.venv3/bin/activate; safeeyes) &
+ibus-daemon -dxr
+redshift-gtk &
+dunst &
 xbindkeys
