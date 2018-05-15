@@ -1,12 +1,15 @@
 set tabstop=4
-set nospell
-set nohlsearch
 set expandtab
 set autoindent
 
-call pathogen#infect()
+execute pathogen#infect()
 
-syntax enable
-filetype plugin indent on
+" Syntastic recommendations
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-map <Leader>= :Tabularize /=>/l1<Return>
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

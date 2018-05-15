@@ -22,9 +22,14 @@ herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
 herbstclient keybind $Mod-Return spawn urxvt256c-ml
+herbstclient keybind $Mod-Shift-Return spawn kitty
 herbstclient keybind $Mod-Shift-grave spawn urxvt
-herbstclient keybind $Mod-grave spawn /home/bkero/code/herbstluftwm/scripts/q3terminal.sh
-herbstclient keybind $Mod-Shift-Return spawn urxvtc -e mosh --ssh="ssh -o Port=2228" bkero@bke.ro
+
+herbstclient keybind XF86MonBrightnessDown spawn brightnessctl -d acpi_video0 set 8%-
+herbstclient keybind XF86MonBrightnessUp spawn brightnessctl -d acpi_video0 set 8%+
+herbstclient keybind XF86AudioRaiseVolume spawn amixer set Master 7%+
+herbstclient keybind XF86AudioLowerVolume spawn amixer set Master 7%-
+herbstclient keybind XF86AudioMute spawn amixer set Master toggle
 
 # Set transparent background for wallpapers
 herbstclient set frame_bg_transparent '1'
@@ -87,7 +92,6 @@ herbstclient keybind $Mod-Shift-j shift down
 herbstclient keybind $Mod-Shift-k shift up
 herbstclient keybind $Mod-Shift-l shift right
 
-herbstclient keybind $Mod-~ /home/bkero/code/herbstluftwm/scripts/q3terminal.sh
 
 # colors
 herbstclient set frame_border_active_color '#222222'
@@ -132,6 +136,7 @@ herbstclient pad 0 30 0 0
 herbstclient rule class~"Conky" manage=off
 herbstclient rule title~"^conky" manage=off
 herbstclient rule title="stalonetray" manage=off
+herbstclient rule title="safeeyes" focus=on fullscreen=on
 
 conky &
 sleep 2
@@ -139,6 +144,7 @@ stalonetray &
 nm-applet &
 (source $HOME/.venv3/bin/activate; safeeyes) &
 ibus-daemon -dxr
-redshift-gtk &
+redshift-gtk -l 45.54117:-122.6581785 & # Portland
 dunst &
 xbindkeys
+nextcloud &
