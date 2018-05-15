@@ -1,0 +1,79 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: Install packages (as root)
+      block:
+        - name: Install rpmfusion repo
+          dnf:
+            name: 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm'
+
+        - name: Install Google Chrome (for Hangouts)
+          dnf:
+            name: 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm'
+
+        - name: Install packages
+          dnf:
+            name: '{{ item }}'
+          with_items:
+            - htop
+            - strace
+            - herbstluftwm
+            - conky
+            - xbindkeys
+            - stalonetray
+            - redshift-gtk
+            - pavucontrol
+            - network-manager-applet
+            - htop
+            - strace
+            - lsof
+            - rxvt-unicode-256color-ml
+            - xlockmore
+            - terminus-fonts
+            - nextcloud-client
+            - vim-enhanced
+            - keepassxc
+            - powertop
+            - mosh
+            - task
+            - scrot
+            - lm_sensors
+            - nmap
+            - acpi
+            - pwgen
+            - python2-virtualenv
+            - feh
+            - weechat
+            - gparted
+            - ShellCheck
+            - brightnessctl
+            - yamllint
+            - python2-ansible-lint
+            - libselinux-python
+      become: true
+
+    - name: Install dotfiles
+      copy:
+        src: "../{{ item }}"
+        dest: "/home/bkero/{{ item | regex_replace('^dot_', '.') }}"
+      with_items:
+        - dot_bash_aliases
+        - dot_bashrc
+        - dot_conkyrc
+        - dot_pythonrc.py
+        - dot_stalonetrayrc
+        - dot_taskrc
+        - dot_vimrc
+        - dot_Xdefaults
+        - dot_Xmodmap
+
+    - name: Make herbstluftwm config directory
+      file:
+        path: /home/bkero/.config/herbstluftwm
+        state: directory
+
+    - name: Install herbstluftwm config file
+      copy:
+        src: ../herbstluftwm_autostart
+        dest: /home/bkero/.config/herbstluftwm/autostart
