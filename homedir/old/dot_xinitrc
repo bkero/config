@@ -1,6 +1,0 @@
-export force_s3tc_enable=true
-xsetbg -at 0,15 $HOME/.wallpaper
-xmodmap $HOME/.Xmodmap
-/usr/bin/urxvtd -q -f -o
-/usr/bin/urxvtc -pe kuake
-/usr/bin/ssh-agent /home/bkero/code/herbstluftwm/herbstluftwm -c ~/.config/herbstluftwm/autostart
