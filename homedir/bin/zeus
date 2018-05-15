@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-ssh -L9090:www.zlb.ops.scl3.mozilla.com:9090 boris.mozilla.com -N &
-sleep 5;
-firefox https://localhost:9090
