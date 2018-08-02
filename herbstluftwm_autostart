@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 # this is a simple config for herbstluftwm
 
@@ -21,12 +22,13 @@ Mod=Mod4
 herbstclient keybind $Mod-Shift-q quit
 herbstclient keybind $Mod-Shift-r reload
 herbstclient keybind $Mod-Shift-c close
-herbstclient keybind $Mod-Return spawn urxvt256c-ml
+#herbstclient keybind $Mod-Return spawn urxvt256c-ml
+herbstclient keybind $Mod-Return spawn kitty
 herbstclient keybind $Mod-Shift-Return spawn kitty
 herbstclient keybind $Mod-Shift-grave spawn urxvt
 
-herbstclient keybind XF86MonBrightnessDown spawn brightnessctl -d acpi_video0 set 8%-
-herbstclient keybind XF86MonBrightnessUp spawn brightnessctl -d acpi_video0 set 8%+
+herbstclient keybind XF86MonBrightnessDown spawn brightnessctl -d intel_backlight set 8%-
+herbstclient keybind XF86MonBrightnessUp spawn brightnessctl -d intel_backlight set 8%+
 herbstclient keybind XF86AudioRaiseVolume spawn amixer set Master 7%+
 herbstclient keybind XF86AudioLowerVolume spawn amixer set Master 7%-
 herbstclient keybind XF86AudioMute spawn amixer set Master toggle
@@ -132,7 +134,7 @@ herbstclient unlock
 #    $panel $monitor &
 #done
 
-herbstclient pad 0 30 0 0
+herbstclient pad 0 39 0 0
 herbstclient rule class~"Conky" manage=off
 herbstclient rule title~"^conky" manage=off
 herbstclient rule title="stalonetray" manage=off

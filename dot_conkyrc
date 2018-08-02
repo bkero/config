@@ -10,12 +10,12 @@ conky.config = {
         draw_graph_borders = true,
         draw_outline = false,
         draw_shades = false,
-        font = 'DejaVu Sans Mono:size=12',
+        font = 'DejaVu Sans Mono:size=8',
         use_xft = true,
         gap_x = 5,
         gap_y = 5,
         minimum_height = 5,
-        minimum_width = 1909,
+        minimum_width = 2549,
         net_avg_samples = 2,
         no_buffers = true,
         out_to_console = false,
@@ -33,4 +33,4 @@ conky.config = {
         show_graph_range = false,
 }
 
-conky.text = [[${color grey}RAM: $color0 ${membar 4,50} ${color grey}CPU: $color0$cpu% ${cpubar 4,50} ${loadavg 1} $processes ${color red}$running_processes ${color grey}Bat: $color${battery_percent BAT0}% ${battery_bar 4,50 BAT0} ${color gray}wlp3s0: $color0${wireless_essid wlp3s0} ${wireless_link_qual_perc wlp3s0}% ${addr wlp3s0}${color gray}  ${color orange}$time PST  ${color red}${tztime Europe/Berlin %H:%M} CEST]]
+conky.text = [[${color grey}RAM: $color0 ${membar 4,50} ${color grey}CPU: $color0$cpu% ${cpubar 4,50} ${loadavg 1} $processes ${color red}$running_processes ${color grey}Bat: $color${battery_percent BAT0}% ${battery_bar 4,50 BAT0} ${color gray}wlp2s0: $color0${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}% ${addr wlp2s0}${color gray}  ${color orange}$time PST  ${color red}${tztime Europe/Berlin %H:%M} CEST]]

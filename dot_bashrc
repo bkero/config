@@ -104,7 +104,7 @@ fi
 export PYTHONSTARTUP=/home/bkero/.pythonrc.py
 export LANG=en_US.utf8
 export EDITOR=/usr/bin/vim
-export PATH=${PATH}:$HOME/bin:$HOME/.bin
+export PATH=$HOME/bin:$HOME/.bin:${PATH}
 export force_s3tc_enable=true
 #export MOZ_USE_OMTC=1
 #export RUBYOPT="rubygems"
@@ -112,4 +112,19 @@ export force_s3tc_enable=true
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus
 
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export BROWSER="$HOME/.firefox/firefox -P work"
+
+export NPM_PACKAGES="$HOME/.npm"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+MANPATH="${NPM_PACKAGES}/share/man:$(manpath)"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export force_s3tc_enable=true
+#export GOROOT=$HOME/.go
+export GOPATH=$HOME/.go
+export GOBIN=${GOPATH}/bin
+export PATH=${PATH}:$GOBIN
