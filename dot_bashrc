@@ -128,3 +128,5 @@ export force_s3tc_enable=true
 export GOPATH=$HOME/.go
 export GOBIN=${GOPATH}/bin
 export PATH=${PATH}:$GOBIN
+export AWS_VAULT_BACKEND=file
+export WINIT_HIDPI_FACTOR=true
