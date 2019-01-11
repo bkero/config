@@ -1,6 +1,9 @@
+set nocompatible
 set tabstop=4
 set expandtab
 set autoindent
+syntax on
+filetype plugin indent on
 
 execute pathogen#infect()
 
@@ -9,7 +12,22 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Terraform entries
+let g:terraform_align=1
+let g:syntastic_terraform_tffilter_plan = 1
+let g:terraform_completion_keys = 1
+
+" Vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'vim-syntastic/syntastic'
+call plug#end()
+
+set tabstop=4
+set expandtab
