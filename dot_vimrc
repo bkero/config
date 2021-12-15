@@ -17,6 +17,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Shellcheck args
+let g:syntastic_sh_shellcheck_args = "-x"
+
 " Terraform entries
 let g:terraform_align=1
 let g:syntastic_terraform_tffilter_plan = 1
@@ -27,7 +30,25 @@ call plug#begin('~/.vim/plugged')
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'vim-syntastic/syntastic'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
 call plug#end()
+
+" Language server support
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'terraform': ['/home/bkero/.bin/terraform-lsp'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ }
 
 set tabstop=4
 set expandtab

@@ -19,8 +19,9 @@ URxvt*shading: 12
 URxvt*transparent: true
 URxvt*perl-ext: font-size,selection-to-clipboard,matcher
 !URxvt*font: xft:Droid Sans Mono:pixelsize=15
-URxvt*font: xft:Terminus:pixelsize=24
-URxvt*urllauncher: firefox
+URxvt*font: xft:Terminus:pixelsize=16
+!URxvt*urllauncher: firefox
+URxvt*urllauncher: brave-browser
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:     perl:font-size:decrease
 URxvt.inputMethod: ibus

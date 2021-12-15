@@ -140,7 +140,7 @@ herbstclient unlock
 #    $panel $monitor &
 #done
 
-herbstclient pad 0 39 0 0
+herbstclient pad 0 28 0 0
 herbstclient rule class~"Conky" manage=off
 herbstclient rule title~"^conky" manage=off
 herbstclient rule title="stalonetray" manage=off
@@ -152,10 +152,16 @@ conky &
 sleep 2
 stalonetray &
 nm-applet &
+safeeyes &
+pasystray &
 #(source $HOME/.venv3/bin/activate; safeeyes) &
 ibus-daemon -dxr
 redshift-gtk -l 45.54117:-122.6581785 & # Portland
+#redshift-gtk -l 37.800293:12.430397 & # Sambuca di Sicilia
+#redshift-gtk -l 12.152180:119.917401 & # Busuanga
 dunst &
 nextcloud &
-compton --vsync drm --backend xr_glx_hybrid --vsync-use-glfinish --glx-no-stencil &
+#compton --vsync drm --backend xr_glx_hybrid --vsync-use-glfinish --glx-no-stencil &
+/home/bkero/code/weelisten/client.py irc.bke.ro Me7chee6PaaFe4oh -p 7000 &
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+eval $(op signin my)

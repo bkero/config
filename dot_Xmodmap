@@ -2,3 +2,6 @@ remove Lock = Caps_Lock
 keycode 66 = Control_L
 add Control = Control_L
 keycode 67 = Escape
+!clear shift
+!add shift = Shift_L
+!keycode 62 = Return
